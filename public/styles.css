@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.cold {
+  background-color: #b3e5fc; /* Azzurro freddo */
+}
+
+.moderate {
+  background-color: #81c784; /* Verde mite */
+}
+
+.hot {
+  background-color: #ff8a65; /* Arancione caldo */
+}
+
+.error {
+  color: red;
+}

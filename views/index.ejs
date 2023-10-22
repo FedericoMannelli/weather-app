@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body
+    class="<%= getTemperatureClass(Math.round(weatherData.main.temp - 273.15)) %>"
+  >
+    <h1>Weather App</h1>
+    <form action="/weather" method="get">
+      <input
+        type="text"
+        name="location"
+        placeholder="Inserisci una posizione"
+      />
+      <button type="submit">Cerca</button>
+    </form>
+    <% if (weatherData) { %>
+    <h2>Condizioni meteo per <%= weatherData.name %></h2>
+    <p>Temperatura: <%= Math.round(weatherData.main.temp - 273.15) %>°C</p>
+    <p>Condizioni: <%= weatherData.weather[0].description %></p>
+    <!-- Altre informazioni meteo disponibili -->
+    <% } %> <% if (error) { %>
+    <p class="error"><%= error %></p>
+    <% } %>
+  </body>
+</html>
